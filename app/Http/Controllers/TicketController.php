@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
@@ -15,7 +16,8 @@ class TicketController extends Controller
     public function download(Ticket $ticket)
     {
         // Authorization: pastikan tiket milik user yang sedang login
-        if ($ticket->booking->user_id !== auth()->id()) {
+        $authenticatedUserId = Auth::id();
+        if ($ticket->booking->user_id !== $authenticatedUserId) {
             abort(403);
         }
 
@@ -35,7 +37,8 @@ class TicketController extends Controller
     public function show(Ticket $ticket)
     {
         // Authorization: pastikan tiket milik user yang sedang login
-        if ($ticket->booking->user_id !== auth()->id()) {
+        $authenticatedUserId = Auth::id();
+        if ($ticket->booking->user_id !== $authenticatedUserId) {
             abort(403);
         }
 
@@ -82,6 +85,13 @@ class TicketController extends Controller
         $pdf = Pdf::loadView('tickets.pdf', compact('ticket'));
         // Ukuran custom: 200mm x 80mm (landscape kecil memanjang)
         $pdf->setPaper([0, 0, 566.93, 226.77], 'landscape'); // 200mm x 80mm dalam pt
+        // Aktifkan pemuatan resource eksternal (gambar QR dari URL)
+        $pdf->setOptions([
+            'isRemoteEnabled' => true,
+            'isHtml5ParserEnabled' => true,
+            'dpi' => 150,
+            'defaultFont' => 'sans-serif',
+        ]);
         return $pdf;
     }
 }
