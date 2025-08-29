@@ -10,36 +10,36 @@
         html, body { margin: 0; padding: 0; font-family: Arial, sans-serif; color: #111827; }
 
         /* Ukuran kontainer diset pasti agar tidak pecah halaman */
-        .ticket { width: calc(200mm - 12mm); height: calc(80mm - 12mm); border-radius: 12px; border: 2px solid #0f172a; overflow: hidden; }
-        .wrap { width: 100%; height: 100%; }
+        .ticket { width: calc(200mm - 12mm); height: calc(80mm - 12mm); border-radius: 14px; background: #f5b000; /* kuning keemasan */ padding: 6px; box-sizing: border-box; }
+        .wrap { width: 100%; height: 100%; background: #0b0b0b; border-radius: 10px; overflow: hidden; }
         .left, .right { float: left; height: 100%; }
 
         /* Tema */
-        .left { width: 72%; background: linear-gradient(135deg, #0b1220 0%, #0f1b33 100%); color: #fff; padding: 12px 16px; box-sizing: border-box; position: relative; }
-        .right { width: 28%; background: #ffffff; border-left: 2px dashed #d1d5db; text-align: center; box-sizing: border-box; padding: 10px 8px; position: relative; }
-        .brand { position: absolute; top: 8px; right: 12px; background: #f59e0b; color: #111827; font-size: 9px; font-weight: 800; padding: 4px 7px; border-radius: 9999px; }
+        .left { width: 72%; background: #0b0b0b; color: #fff; padding: 12px 16px; box-sizing: border-box; position: relative; }
+        .right { width: 28%; background: #ffffff; border-left: 2px dashed #e5e7eb; text-align: center; box-sizing: border-box; padding: 10px 8px; position: relative; }
+        .brand { position: absolute; top: 8px; right: 12px; background: #f5b000; color: #111827; font-size: 9px; font-weight: 800; padding: 4px 7px; border-radius: 9999px; box-shadow: 0 0 0 2px #111 inset; }
 
         /* Judul & meta */
-        .title { font-size: 18px; font-weight: 800; letter-spacing: .4px; margin: 0 0 6px; text-transform: uppercase; }
+        .title { font-size: 36px; font-weight: 900; letter-spacing: .8px; margin: 0 0 12px; text-transform: uppercase; color: #ffffff; }
         .metas { margin-bottom: 10px; }
-        .meta { display: inline-block; background: #f59e0b; color: #111827; font-weight: 800; font-size: 9px; padding: 4px 8px; border-radius: 6px; margin-right: 6px; }
+        .meta { display: inline-block; background: #f5b000; color: #111827; font-weight: 800; font-size: 18px; padding: 6px 10px; border-radius: 8px; margin-right: 8px; }
 
         /* Box kecil ala mockup */
         .boxes { margin: 8px 0 12px; }
-        .box { display: inline-block; min-width: 58px; padding: 6px 8px; margin-right: 6px; border: 2px solid #fbbf24; border-radius: 8px; text-align: center; background: rgba(245, 158, 11, 0.06); }
-        .box-label { display: block; font-size: 8px; letter-spacing: .6px; color: #fbbf24; text-transform: uppercase; margin-bottom: 3px; }
-        .box-value { display: block; font-size: 12px; font-weight: 800; color: #ffffff; }
+        .box { display: inline-block; min-width: 58px; padding: 6px 8px; margin-right: 6px; border: 2px solid #f5b000; border-radius: 8px; text-align: center; background: #111111; }
+        .box-label { display: block; font-size: 16px; letter-spacing: .6px; color: #f5b000; text-transform: uppercase; margin-bottom: 4px; }
+        .box-value { display: block; font-size: 24px; font-weight: 800; color: #ffffff; }
 
         /* Info customer */
-        .list { font-size: 10px; line-height: 1.5; }
-        .list-row { margin-bottom: 3px; }
-        .list b { color: #fbbf24; }
+        .list { font-size: 18px; line-height: 1.6; }
+        .list-row { margin-bottom: 4px; }
+        .list b { color: #f5b000; }
 
         /* QR Stub */
-        .stub-title { font-size: 9px; color: #6b7280; text-transform: uppercase; letter-spacing: .6px; margin: 4px 0 6px; }
-        .qr { width: 110px; height: 110px; margin: 0 auto 6px; border: 2px solid #e5e7eb; border-radius: 8px; object-fit: contain; }
-        .code { font-size: 10px; color: #111827; font-weight: 700; }
-        .small { font-size: 9px; color: #6b7280; margin-top: 2px; }
+        .stub-title { font-size: 16px; color: #6b7280; text-transform: uppercase; letter-spacing: .6px; margin: 6px 0 10px; }
+        .qr { width: 200px; height: 200px; margin: 0 auto 10px; border: 3px solid #111827; border-radius: 10px; object-fit: contain; box-shadow: 0 0 0 3px #f5b000 inset; }
+        .code { font-size: 18px; color: #111827; font-weight: 700; }
+        .small { font-size: 16px; color: #6b7280; margin-top: 4px; }
 
         /* Perforation dots visual */
         .dots { position: absolute; left: -7px; top: 0; bottom: 0; width: 14px; background: repeating-linear-gradient(to bottom, transparent, transparent 6px, rgba(17,24,39,.15) 6px, rgba(17,24,39,.15) 10px); }
